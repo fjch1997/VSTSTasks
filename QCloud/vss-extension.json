@@ -1,0 +1,47 @@
+{
+  "manifestVersion": 1,
+  "id": "QCloudBuildTasks",
+  "name": "QCloud Build Tasks",
+  "version": "0.2.2",
+  "publisher": "fjch1997",
+  "targets": [
+    {
+      "id": "Microsoft.VisualStudio.Services"
+    }
+  ],
+  "description": "Build and Release tasks interacting with QCloud.",
+  "categories": [
+    "Build and release"
+  ],
+  "files": [
+    {
+      "path": "QCloudCosUpload"
+    },
+    {
+      "path": "QCloudCosFolderUpload"
+    }
+  ],
+  "contributions": [
+    {
+      "id": "QCloudCosUpload",
+      "type": "ms.vss-distributed-task.task",
+      "targets": [
+        "ms.vss-distributed-task.tasks"
+      ],
+      "properties": {
+        "name": "QCloudCosUpload"
+      }
+    },
+
+    {
+      "id": "QCloudCosFolderUpload",
+      "type": "ms.vss-distributed-task.task",
+      "targets": [
+        "ms.vss-distributed-task.tasks"
+      ],
+      "properties": {
+        "name": "QCloudCosFolderUpload"
+      }
+    }
+  ]
+}

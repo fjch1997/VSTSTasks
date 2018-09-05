@@ -1,0 +1,46 @@
+{
+  "$schema": "https://raw.githubusercontent.com/AArnott/vso-agent-tasks/9b41d803a/tasks.schema.json",
+  "id": "163D9C8D-DF73-4254-8CB5-402AC081584D",
+  "name": "RetriveFileVersion",
+  "friendlyName": "Retrive File Version",
+  "description": "Retrive file version and set to a varible",
+  "helpMarkDown": "",
+  "category": "Utility",
+  "author": "Jingchao Feng",
+  "version": {
+    "Major": 0,
+    "Minor": 1,
+    "Patch": 2
+  },
+  "instanceNameFormat": "Retrive file version to $(variableName)",
+  "groups": [
+    {
+      "name": "advanced",
+      "displayName": "Advanced",
+      "isExpanded": false
+    }
+  ],
+  "inputs": [
+    {
+      "name": "fileName",
+      "type": "filePath",
+      "label": "File Name",
+      "defaultValue": "",
+      "required": true
+    },
+    {
+      "name": "variableName",
+      "type": "string",
+      "label": "Variable Name",
+      "defaultValue": "",
+      "required": true,
+      "helpMarkDown": "Variable name without $(). Example: System.DefaultWorkingDirectory"
+    }
+  ],
+  "execution": {
+    "PowerShell3": {
+      "target": "RetriveFileVersion.ps1",
+      "platforms": [ "windows" ]
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "manifestVersion": 1,
+  "id": "RetriveFileVersion",
+  "name": "Retrive File Version Build Task",
+  "version": "0.1.2",
+  "publisher": "fjch1997",
+  "targets": [
+    {
+      "id": "Microsoft.VisualStudio.Services"
+    }
+  ],
+  "description": "Retrive file version and set to a varible.",
+  "categories": [
+    "Build and release"
+  ],
+  "files": [
+    {
+      "path": "buildtask"
+    }
+  ],
+  "contributions": [
+    {
+      "id": "RetriveFileVersion",
+      "type": "ms.vss-distributed-task.task",
+      "targets": [
+        "ms.vss-distributed-task.tasks"
+      ],
+      "properties": {
+        "name": "buildtask"
+      }
+    }
+  ]
+}

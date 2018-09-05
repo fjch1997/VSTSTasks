@@ -1,0 +1,96 @@
+{
+  "$schema": "https://raw.githubusercontent.com/AArnott/vso-agent-tasks/9b41d803a/tasks.schema.json",
+  "id": "39B52A4C-7AAC-484B-884A-06EF57FC99CC",
+  "name": "QCloudCosFolderUpload",
+  "friendlyName": "QCloud COS Folder Upload",
+  "description": "Upload folder to QCloud COS",
+  "helpMarkDown": "",
+  "category": "Deploy",
+  "author": "Jingchao Feng",
+  "version": {
+    "Major": 0,
+    "Minor": 1,
+    "Patch": 5
+  },
+  "instanceNameFormat": "Upload folder to QCloud COS",
+  "groups": [
+    {
+      "name": "advanced",
+      "displayName": "Advanced",
+      "isExpanded": false
+    }
+  ],
+  "inputs": [
+    {
+      "name": "apiBaseUrl",
+      "type": "string",
+      "label": "Api Base URL",
+      "required": true,
+      "defaultValue": "http://sh.file.myqcloud.com/files/v2/"
+    },
+    {
+      "name": "appId",
+      "type": "string",
+      "label": "AppId",
+      "defaultValue": "",
+      "required": true
+    },
+    {
+      "name": "secretId",
+      "type": "string",
+      "label": "SecretId",
+      "defaultValue": "",
+      "required": true
+    },
+    {
+      "name": "secretKey",
+      "type": "string",
+      "label": "SecretKey",
+      "defaultValue": "",
+      "required": true
+    },
+    {
+      "name": "bucketName",
+      "type": "string",
+      "label": "Bucket Name",
+      "defaultValue": "",
+      "required": true
+    },
+    {
+      "name": "folderToUpload",
+      "type": "filePath",
+      "label": "Folder to upload",
+      "defaultValue": "",
+      "required": true,
+      "helpMarkDown": "Full path of a single folder to upload. Use multiple tasks to upload multiple folders. This will upload all sub directories and files within the folder."
+    },
+    {
+      "name": "searchPattern",
+      "type": "string",
+      "label": "Search Pattern",
+      "defaultValue": "*",
+      "required": true,
+      "helpMarkDown": "A pattern to filter files.\r\nSupports * wildcards."
+    },
+    {
+      "name": "fileAttribute",
+      "type": "string",
+      "label": "File Attribute",
+      "defaultValue": "",
+      "groupName": "advanced"
+    },
+    {
+      "name": "insertOnly",
+      "type": "boolean",
+      "label": "Returns Error if File Already Exists",
+      "defaultValue": true,
+      "groupName": "advanced"
+    }
+  ],
+  "execution": {
+    "PowerShell3": {
+      "target": "QCloudCosFolderUpload.ps1",
+      "platforms": [ "windows" ]
+    }
+  }
+}
