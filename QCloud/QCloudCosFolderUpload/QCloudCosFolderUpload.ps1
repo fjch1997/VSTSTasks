@@ -43,7 +43,7 @@ try {
     # Do work.
 	Write-Host "Loading QCloud API"
 	$cosCloudType = (Add-Type -Path ".\QCloud.CosApi\cos_api_sdk.dll" -PassThru | where Name -eq "CosCloud")
-	$cosCloud = $cosCloudType.GetConstructors()[1].Invoke(@($apiBaseUrl, $appId, $secretId,$secretKey, 60))
+	$cosCloud = $cosCloudType.GetConstructors()[1].Invoke(@($apiBaseUrl, $appId, $secretId,$secretKey, 600))
 	
 	Write-Host "Uploading folder $folderToUpload"
 	$directoryInfo = New-Object System.IO.DirectoryInfo($folderToUpload)

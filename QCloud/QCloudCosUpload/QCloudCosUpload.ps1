@@ -16,7 +16,7 @@ try {
 	[bool]$insertOnly = Get-VstsInput -Name insertOnly -AsBool
 	Write-Host "Loading QCloud API"
 	$cosCloudType = (Add-Type -Path ".\QCloud.CosApi\cos_api_sdk.dll" -PassThru | where Name -eq "CosCloud")
-	$cosCloud = $cosCloudType.GetConstructors()[1].Invoke(@($apiBaseUrl, $appId, $secretId,$secretKey, 60))
+	$cosCloud = $cosCloudType.GetConstructors()[1].Invoke(@($apiBaseUrl, $appId, $secretId,$secretKey, 600))
 	foreach ($fileName in (Find-VstsMatch -Pattern $filesToUpload.Split("`n"))){
 		Write-Host "Uploading $fileName"
 		$fileInfo = New-Object System.IO.FileInfo($fileName)
